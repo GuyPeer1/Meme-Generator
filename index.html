@@ -9,13 +9,29 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
+<body onload="onInit()">
+    <section class="editor">
+
+            <label for="create-color">
+                <i class="fa fa-palette"></i>
+                <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
+            </label>
+            <button onclick="onSizeUp()">A+</button>
+            <button onclick="onSizeDown()">A-</button>
+
+    </section>
+    <div class="canvas-container">
+        <canvas width="400" height="400"></canvas>
+    </div>
+    <input type="text" placeholder="meme text comes here" oninput="setLineTxt(this)"> </input>
     <section class="gallery">gallery </section>
 
-    <section class="editor">editor </section>
-
     <script src="js/main.js"></script>
-    <script src="js/services/draw.service.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="https://kit.fontawesome.com/bf7fb668e9.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
