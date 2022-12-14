@@ -26,12 +26,21 @@ var gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'Temp text',
-            size: 20,
+            txt: 'first line',
+            size: 40,
             align: 'left',
-            color: 'yellow'
+            color: 'yellow',
+            height: 50
+        },
+        {
+            txt: 'Second line',
+            size: 40,
+            align: 'left',
+            color: 'blue',
+            height: 300
         }
     ]
+
 }
 
 function getMeme() {
@@ -41,18 +50,62 @@ function getMeme() {
 function setImg(img) {
     let currMeme = gMeme
     currMeme.selectedImgId = img.id
+    currMeme.lines[0].txt = ''
+    currMeme.lines[1].txt = ''
     gMeme = currMeme
 }
 
 function setLineTxt(text) {
     let currMeme = gMeme
-    currMeme.lines[0].txt = text.value
+    currMeme.lines[gCurrLinePicked].txt = text.value
     gMeme = currMeme
     renderMeme()
 }
 
+function onSetText() {
+    gTextPos = (gTextPos === 50) ? 300 : 150;
+}
+
 function setLineColor(userColor) {
     let currMeme = gMeme
-    currMeme.lines[0].color = userColor.value
+    currMeme.lines[gCurrLinePicked].color = userColor.value
+    renderMeme()
+}
+
+function setFontSize(lowerOrBigger) {
+    var diffrance = lowerOrBigger ? 1 : -1
+    let currMeme = gMeme
+    currMeme.lines[gCurrLinePicked].size += diffrance
+    gMeme = currMeme
+    renderMeme()
+}
+
+function onSwitchLine() {
+    gCurrLinePicked = (gCurrLinePicked === 0) ? 1 : 0;
+    gTextPos = (gTextPos === 50) ? 150 : 50;
+}
+
+function onSwitchAlign(userAlign) {
+    currMeme = gMeme
+    currMeme.lines.forEach(meme => {
+        meme.align = userAlign
+    })
+    gMeme = currMeme
+    renderMeme()
+}
+
+function onDeleteRow() {
+    currMeme = gMeme
+    currMeme.lines[gCurrLinePicked].txt = ''
+    renderMeme()
+    onSwitchLine()
+}
+
+function onMoveLine(upOrDown) {
+    currMeme = gMeme
+    let movement = (!upOrDown) ? 1 : -1
+    let pos = currMeme.lines[gCurrLinePicked].height
+    pos += movement
+    currMeme.lines[gCurrLinePicked].height = pos
     renderMeme()
 }

@@ -1,12 +1,29 @@
 function renderGallery() {
     var gallery = document.querySelector('.gallery')
-    var id = 'img/1.jpg'
-    var id2 = 'img/2.jpg'
-    gallery.innerHTML = `<img id="1" onclick="onImgSelect(this)" src="` + id +`"/>`
-    gallery.innerHTML += `<img id="2" onclick="onImgSelect(this)" src="` + id2 +`"/>`
+    var strHTML = ''
+    gImgs.forEach(img => {
+        let id = img.id
+        strHTML += `<img id="${id}" onclick="onImgSelect(this)" src="img/${id}.jpg"/>`
+    })
+    gallery.innerHTML = strHTML
 }
 
-function onImgSelect(img){
-    setImg(img) 
-    renderMeme() 
+function onImgSelect(img) {
+    setImg(img)
+    let currMeme = gMeme
+    currMeme = {
+        selectedImgId: img.id,
+        selectedLineIdx: 0,
+        lines: [
+            {
+                txt: '',
+                size: 40,
+                align: 'left',
+                color: 'white',
+                height: 50
+            }
+        ]
+    }
+    gMeme = currMeme
+    renderMeme()
 }

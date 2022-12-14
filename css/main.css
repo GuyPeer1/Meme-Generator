@@ -1,5 +1,10 @@
-.clean-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
+/* Basic */
+@import 'helpers.css';
+@import 'vars.css';
+@import 'header.css';
+
+.grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 10px;
+  }

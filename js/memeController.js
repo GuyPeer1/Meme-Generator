@@ -1,35 +1,38 @@
 let gElCanvas
 let gCtx
+let gTextPos = 50
+let gCurrLinePicked = 0
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     renderMeme()
     renderGallery()
-    
+
 }
 
-function renderMeme(color = 'black', fontSize = '30px') {
-    let currMeme = getMeme()
-    const elImg = new Image() 
+function renderMeme() {
+    const currMeme = getMeme()
+    const elImg = new Image()
     elImg.src = 'img/' + currMeme.selectedImgId + '.jpg';
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(currMeme)
+        currMeme.lines.forEach(line => {
+            drawText(line)
+            gTextPos = (gTextPos === 50) ? 300 : 150;
+        })
     }
 }
 
-//Called from renderMeme, draw the user text on the pic
-function drawText(currMeme) {
-    var text = currMeme.lines[0].txt
-    var color = currMeme.lines[0].color
+function drawText(line) {
+    const { txt: text, color: color, size: size, align: align, height: height } = line
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'
-    gCtx.fillStyle = color
-    gCtx.font =  '39px Arial'
-    gCtx.textAlign = 'center'
+    gCtx.fillStyle = color || white
+    gCtx.font = size + 'px impact'
+    gCtx.textAlign = align
     gCtx.textBaseline = 'middle'
-    gCtx.fillText(text, gElCanvas.width / 2, 50) 
-    gCtx.strokeText(text, gElCanvas.width / 2, 50) 
+    gCtx.fillText(text, gElCanvas.width / 2, height)
+    gCtx.strokeText(text, gElCanvas.width / 2, height)
 }
 

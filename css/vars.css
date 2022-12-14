@@ -1,0 +1,13 @@
+/* vars */
+
+:root {
+    /* pallete */
+    /* BackGround Color: */
+    --clr1: #ff7f00; 
+
+    
+    /* bp */
+    --s: 600px;
+    --m: 740px;
+    --l: 980px;
+}
