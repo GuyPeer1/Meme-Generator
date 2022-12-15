@@ -13,15 +13,19 @@
         <div class="logo">memegen</div>
         <nav class="main-nav">
             <ul class="flex clean-list nav-list">
-                <li><a href="http://127.0.0.1:5500/index.html">gallery</a></li>
+                <li><a href="https://guypeer1.github.io/Meme-Generator/">Gallery</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<body onload="onInit()">
-    <section class="editor">
+<body onload="onInit()" class="main-layout">
+    <section class="editor flex align-center ">
+        <section class="canvas">
+            <div class="canvas-container">
+                <canvas width="400" height="400"></canvas>
+        </section>
         <section class="control-box">
             <input type="text" name="meme-text" placeholder="meme text comes here" oninput="onTextChange(this)">
             </input>
@@ -40,15 +44,31 @@
                 <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
             </label>
         </section>
-        <div class=" canvas-container">
-            <canvas width="400" height="400"></canvas>
+        </div>
     </section>
-    </div>
     <div class="main-content">
-        <section class="search-area"> Enter search keyword</section>
-        <section class="gallery grid grid-container">
-
+        <section class="search-area flex align-center space-between">Search keyword
+            <i class="fa-solid fa-magnifying-glass"></i>
         </section>
+        <section class="gallery grid grid-container"> </section>
+        <footer class='main-footer flex align-center'>
+            <img src=img/me.jpg class="logo">
+            <div class="about"><span class="footer-name"> Guy Peer </span> <br />
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptas impedit officia aliquam enim sed
+                similique tempore
+                <ul class="social-links clean-list flex align-items ">
+                    <li><i class="fa-brands fa-linkedin-in"></i></li>
+                    <li><i class="fa-brands fa-facebook"></i></li>
+                    <li><i class="fa-brands fa-github"></i></li>
+                </ul>
+            </div>
+        </footer>
+
+        <footer class="buttom-fotter flex align-center">
+            <div class="logo">memegen</div>
+            <small>all rights reserved 2019</small>
+        </footer>
+
     </div>
     <script src="js/main.js"></script>
     <script src="js/memeController.js"></script>

@@ -1,13 +1,28 @@
 .main-header {
     background-color: var(--clr1);
-    height: 66px;
+    /* height: 66px; */
 }
 
 .main-header .main-nav a {
-    color: inherit;
     text-decoration: none;
     font-family: Montserrat;
     font-weight: 400;
     font-size: 1.357em;
     color:var(--clr2);
+    min-width: 5em;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header .main-nav li:first-child {
+    border-right: 1px solid var(--clr3);
+}
+
+.main-header .logo {
+    font-family: Montserrat;
+    font-weight: 800;
+    color:var(--clr2);
+    font-size: 1.8em;
 }

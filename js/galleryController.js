@@ -16,7 +16,7 @@ function onImgSelect(img) {
         selectedLineIdx: 0,
         lines: [
             {
-                txt: 'k',
+                txt: '',
                 size: 40,
                 align: 'left',
                 color: 'white',
@@ -27,8 +27,14 @@ function onImgSelect(img) {
     gMeme = currMeme
     gTextPos = 50
     renderMeme()
-    //show editor & hide the gallery
-    document.querySelector('.editor').style.display ='block'
-    document.querySelector('.main-content').style.display ='none'
+    //show editor & hide most of the main-content
+    document.querySelector('.editor').style.left ='0'
+    document.querySelector('.editor').style.width ='100vw'
+    document.querySelector('.search-area').style.display = 'none'
+    document.querySelector('.gallery').style.display = 'none'
+    document.querySelector('.main-footer').style.display = 'none'
+    document.querySelector('.buttom-fotter').style.marginTop = '28.5em'
+    document.querySelector('.buttom-fotter').style.width = '100vw'
 
 }
+

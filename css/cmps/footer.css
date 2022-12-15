@@ -1,0 +1,51 @@
+img.logo {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 322px;
+    height: 322px;
+    border-left: 400px;
+}
+
+.main-footer {
+    text-align: center;
+    font-weight: 400;
+    color: var(--clr6);
+    font-family: Montserrat;
+    font-size: 1.25em;
+}
+
+.main-footer .footer-name {
+    font-size: 1.56em;
+    font-weight: 700;
+}
+
+.main-footer li {
+    background-color: var(--clr1);
+    color: var(--clr2);
+    margin-right: .5em;
+    border-radius: 12px;
+    width: 2.43em;
+    height: 2.43em;
+}
+
+.buttom-fotter {
+    height: 13em;
+    background-color: var(--clr1);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttom-fotter .logo {
+    font-family: Montserrat;
+    font-weight: 800;
+    color: var(--clr2);
+    font-size: 1.8em;
+}
+
+.buttom-fotter small {
+    color: #ffffff;
+    font-family: "Montserrat - Thin";
+    font-size: 1.1875em;
+    font-weight: 400;
+
+}

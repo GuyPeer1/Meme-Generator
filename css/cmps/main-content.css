@@ -1,10 +1,15 @@
 .search-area {
   color: var(--clr4);
   font-family: Montserrat;
-  width: 206px;
+  width: 12.875em;
   height: 3.5em;
   font-size: 1.1875em;
   font-weight: 500;
+
+}
+
+.main-content {
+  position: absolute;
 }
 
 .grid-container {
@@ -21,4 +26,12 @@
 
 .editor {
   background-color: var(--clr5);
+  justify-content: center;
+  position: absolute; 
+  left: -999em;
+z-index: 1;
+}
+
+.editor .canvas {
+padding: 2em;
 }

@@ -11,6 +11,8 @@
     --clr4: #7a7a7a;
     /* main layout & gallery background color */
     --clr5:  #e3e3e3;
+    /*footer text color */
+    --clr6:  #000000;
 
     /* bp */
     --s: 600px;
