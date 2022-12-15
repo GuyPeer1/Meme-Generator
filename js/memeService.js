@@ -31,13 +31,6 @@ var gMeme = {
             align: 'center',
             color: 'yellow',
             height: 50
-        },
-        {
-            txt: 'Second line',
-            size: 40,
-            align: 'center',
-            color: 'blue',
-            height: 300
         }
     ]
 
@@ -50,49 +43,55 @@ function getMeme() {
 function setImg(img) {
     let currMeme = gMeme
     currMeme.selectedImgId = img.id
-    currMeme.lines[0].txt = ''
-    currMeme.lines[1].txt = ''
     gMeme = currMeme
 }
 
 function onTextChange(text) {
     let currMeme = gMeme
-    currMeme.lines[gCurrLinePicked].txt = text.value
+    let idx = currMeme.selectedLineIdx
+    currMeme.lines[idx].txt = text.value
     gMeme = currMeme
     renderMeme()
 }
 
 function onTextSubmit() {
     let currMeme = gMeme
+    gTextPos = (gTextPos === 50) ? 300 : 150;
     currMeme.lines.push({
         txt: '',
         size: 40,
         align: 'center',
         color: 'white',
-        height: 300
+        height: gTextPos
     })
-    gTextfPos = (gTextPos === 50) ? 300 : 150;
     gMeme = currMeme
-    gCurrLinePicked++
+    gMeme.selectedLineIdx++
     restorePlaceHolder()
 }
 
 function setLineColor(userColor) {
     let currMeme = gMeme
-    currMeme.lines[gCurrLinePicked].color = userColor.value
+    // currMeme.lines[gCurrLinePicked].color = userColor.value
+    idx = gMeme.selectedLineIdx
+    currMeme.lines[idx].color = userColor.value
     renderMeme()
 }
 
 function setFontSize(lowerOrBigger) {
     var diffrance = lowerOrBigger ? 1 : -1
     let currMeme = gMeme
-    currMeme.lines[gCurrLinePicked].size += diffrance
+    idx = gMeme.selectedLineIdx
+    currMeme.lines[idx].size += diffrance
     gMeme = currMeme
     renderMeme()
 }
 
 function onSwitchLine() {
-    gCurrLinePicked = (gCurrLinePicked === 0) ? 1 : 0;
+    let idx = gMeme.selectedLineIdx
+    idx++
+    if(!gMeme.lines[idx]) idx = 0
+    console.log('idx', idx)
+    gMeme.selectedLineIdx = idx
     gTextPos = (gTextPos === 50) ? 150 : 50;
 }
 
@@ -107,7 +106,9 @@ function onSwitchAlign(userAlign) {
 
 function onDeleteRow() {
     currMeme = gMeme
-    currMeme.lines[gCurrLinePicked].txt = ''
+    let idx = gMeme.selectedLineIdx
+    // currMeme.lines[gCurrLinePicked].txt = ''
+    currMeme.lines[idx].txt = ''
     renderMeme()
     onSwitchLine()
 }
@@ -115,8 +116,9 @@ function onDeleteRow() {
 function onMoveLine(upOrDown) {
     currMeme = gMeme
     let movement = (!upOrDown) ? 1 : -1
-    let pos = currMeme.lines[gCurrLinePicked].height
+    let idx = gMeme.selectedLineIdx
+    let pos = currMeme.lines[idx].height
     pos += movement
-    currMeme.lines[gCurrLinePicked].height = pos
+    currMeme.lines[idx].height = pos
     renderMeme()
 }

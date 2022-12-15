@@ -16,7 +16,7 @@ function onImgSelect(img) {
         selectedLineIdx: 0,
         lines: [
             {
-                txt: '',
+                txt: 'k',
                 size: 40,
                 align: 'left',
                 color: 'white',
@@ -25,7 +25,7 @@ function onImgSelect(img) {
         ]
     }
     gMeme = currMeme
-    gCurrLinePicked = 0
+    gTextPos = 50
     renderMeme()
     //show editor & hide the gallery
     document.querySelector('.editor').style.display ='block'

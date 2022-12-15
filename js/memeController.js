@@ -1,7 +1,7 @@
 let gElCanvas
 let gCtx
 let gTextPos = 50
-let gCurrLinePicked = 0
+// let gCurrLinePicked = 0
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
@@ -20,7 +20,6 @@ function renderMeme(y) {
         if (y) highLightText(y)
         currMeme.lines.forEach(line => {
             drawText(line)
-            gTextPos = (gTextPos === 50) ? 300 : 150;
         })
     }
 }
@@ -37,23 +36,39 @@ function drawText(line) {
     gCtx.strokeText(text, gElCanvas.width / 2, height)
 }
 
-function restorePlaceHolder() {
-    document.getElementsByName('meme-text')[0].placeholder = 'meme text comes here';
-}
 
 function highLightText(y) {
     let startY
-    if (y < 70) {
-        startY = 10
-        y = 90
-    }
-    else {
-        startY = 260
-        y = 320
+    let height = gElCanvas.height
+    // if (y < 70) {
+    //     startY = 10
+    //     y = 90
+    // }
+    // else {
+    //     startY = 260
+    //     y = 320
+    // }
+    switch (true) {
+        case y < height / 4:
+            startY = 10;
+            y = 90;
+            break
+        case y < height / 1.8:
+            startY = 110;
+            y = 120;
+            break
+            default: 
+            startY = 260;
+            y = 320;
+            break
     }
     gCtx.beginPath()
     gCtx.fillStyle = 'white'
     gCtx.fillRect(0, startY, gElCanvas.width, y)
     gCtx.strokeStyle = 'black'
     gCtx.strokeRect(0, startY, gElCanvas.width, y)
+}
+
+function restorePlaceHolder() {
+    document.getElementsByName('meme-text')[0].placeholder = 'meme text comes here';
 }

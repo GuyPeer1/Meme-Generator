@@ -7,9 +7,12 @@ function addMouseListeners() {
 }
 
 function onDown(ev) {
+    let height = gElCanvas.height
     const pos = getEvPos(ev)
-    if ((pos.y < 70) || (pos.y > 270 && pos.y < 330)) renderMeme(pos.y)
-    // document.body.style.cursor = 'grabbing'
+    console.log('pos.y', pos.y)
+    if ((pos.y < height/4) || (pos.y > height/1.4 && pos.y < height-30) || (pos.y > height/2.3 && pos.y < height/1.8))
+    renderMeme(pos.y)
+    else (renderMeme())
 }
 
 function getEvPos(ev) {

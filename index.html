@@ -21,10 +21,9 @@
 </header>
 
 <body onload="onInit()">
-    <section class="editor" style="display: none">
+    <section class="editor">
         <section class="control-box">
-            <input type="text" name="meme-text" placeholder="meme text comes here" onchange="onTextSubmit()"
-                oninput="onTextChange(this)">
+            <input type="text" name="meme-text" placeholder="meme text comes here" oninput="onTextChange(this)">
             </input>
             <button onclick="onSwitchLine()"><i class="fa-solid fa-up-down"></i></button>
             <button onclick="onMoveLine(true)"> <i class="fa-solid fa-arrow-up"></i></button>
