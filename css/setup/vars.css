@@ -1,0 +1,19 @@
+/* vars */
+
+:root {
+    /* BackGround Color: */
+    --clr1: #ff7f00;
+    /* Text Color */
+    --clr2: #ffffff;
+    /* Nav Border background-color */
+    --clr3: #8a8a8a;
+    /* Serach bar font color */
+    --clr4: #7a7a7a;
+    /* main layout & gallery background color */
+    --clr5:  #e3e3e3;
+
+    /* bp */
+    --s: 600px;
+    --m: 740px;
+    --l: 980px;
+}

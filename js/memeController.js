@@ -8,15 +8,16 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
     renderMeme()
     renderGallery()
-
+    addMouseListeners()
 }
 
-function renderMeme() {
+function renderMeme(y) {
     const currMeme = getMeme()
     const elImg = new Image()
     elImg.src = 'img/' + currMeme.selectedImgId + '.jpg';
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        if (y) highLightText(y)
         currMeme.lines.forEach(line => {
             drawText(line)
             gTextPos = (gTextPos === 50) ? 300 : 150;
@@ -36,3 +37,23 @@ function drawText(line) {
     gCtx.strokeText(text, gElCanvas.width / 2, height)
 }
 
+function restorePlaceHolder() {
+    document.getElementsByName('meme-text')[0].placeholder = 'meme text comes here';
+}
+
+function highLightText(y) {
+    let startY
+    if (y < 70) {
+        startY = 10
+        y = 90
+    }
+    else {
+        startY = 260
+        y = 320
+    }
+    gCtx.beginPath()
+    gCtx.fillStyle = 'white'
+    gCtx.fillRect(0, startY, gElCanvas.width, y)
+    gCtx.strokeStyle = 'black'
+    gCtx.strokeRect(0, startY, gElCanvas.width, y)
+}

@@ -1,10 +1,18 @@
-/* Basic */
-@import 'helpers.css';
-@import 'vars.css';
-@import 'header.css';
+/* Setup */
+@import './setup/vars.css';
+@import './setup/font-face.css';
 
-.grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 10px;
-  }
+/* Basic */
+/* @import './basic/basic.css';
+@import './basic/layout.css';
+@import './basic/buttons.css'; */
+@import './basic/helpers.css';
+/* @import './basic/icons.css'; */
+
+/* Cmps */
+@import './cmps/header.css';
+/* @import './cmps/dropdown.css';
+@import './cmps/footer.css'; */
+@import './cmps/main-content.css';
+/* @import './cmps/modal.css'; */
+

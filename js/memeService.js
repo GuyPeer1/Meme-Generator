@@ -28,14 +28,14 @@ var gMeme = {
         {
             txt: 'first line',
             size: 40,
-            align: 'left',
+            align: 'center',
             color: 'yellow',
             height: 50
         },
         {
             txt: 'Second line',
             size: 40,
-            align: 'left',
+            align: 'center',
             color: 'blue',
             height: 300
         }
@@ -55,15 +55,26 @@ function setImg(img) {
     gMeme = currMeme
 }
 
-function setLineTxt(text) {
+function onTextChange(text) {
     let currMeme = gMeme
     currMeme.lines[gCurrLinePicked].txt = text.value
     gMeme = currMeme
     renderMeme()
 }
 
-function onSetText() {
-    gTextPos = (gTextPos === 50) ? 300 : 150;
+function onTextSubmit() {
+    let currMeme = gMeme
+    currMeme.lines.push({
+        txt: '',
+        size: 40,
+        align: 'center',
+        color: 'white',
+        height: 300
+    })
+    gTextfPos = (gTextPos === 50) ? 300 : 150;
+    gMeme = currMeme
+    gCurrLinePicked++
+    restorePlaceHolder()
 }
 
 function setLineColor(userColor) {

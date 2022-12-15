@@ -25,5 +25,10 @@ function onImgSelect(img) {
         ]
     }
     gMeme = currMeme
+    gCurrLinePicked = 0
     renderMeme()
+    //show editor & hide the gallery
+    document.querySelector('.editor').style.display ='block'
+    document.querySelector('.main-content').style.display ='none'
+
 }
