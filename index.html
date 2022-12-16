@@ -13,7 +13,7 @@
         <div class="logo">memegen</div>
         <nav class="main-nav">
             <ul class="flex clean-list nav-list">
-                <li><a href="https://guypeer1.github.io/Meme-Generator/">Gallery</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html">Gallery</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
@@ -21,29 +21,34 @@
 </header>
 
 <body onload="onInit()" class="main-layout">
-    <section class="editor flex align-center ">
+    <section class="editor flex  ">
         <section class="canvas">
             <div class="canvas-container">
                 <canvas width="400" height="400"></canvas>
         </section>
-        <section class="control-box">
-            <input type="text" name="meme-text" placeholder="meme text comes here" oninput="onTextChange(this)">
+        <section class="control-box ">
+            <input class="meme-text" type="text" name="meme-text" placeholder="meme text comes here"
+                oninput="onTextChange(this)">
             </input>
-            <button onclick="onSwitchLine()"><i class="fa-solid fa-up-down"></i></button>
-            <button onclick="onMoveLine(true)"> <i class="fa-solid fa-arrow-up"></i></button>
-            <button onclick="onTextSubmit()"><i class="fa-solid fa-plus"></i></button>
-            <button onclick="onMoveLine(false)"> <i class="fa-solid fa-arrow-down"></i></button>
-            <button onclick="onDeleteRow()"><i class="fa-regular fa-trash-can"></i></button>
-            <button onclick="onSwitchAlign('left')"><i class="fa-solid fa-align-left"></i></button>
-            <button onclick="onSwitchAlign('center')"><i class="fa-solid fa-align-center"></i></button>
-            <button onclick="onSwitchAlign('right')"><i class="fa-solid fa-align-right"></i></button>
-            <button onclick="setFontSize(false)">A-</button>
-            <button onclick="setFontSize(true)">A+</button>
+            <div class="editor-first-line flex ">
+            <button onclick="onSwitchLine()"><i class="switch-line fa-solid fa-up-down"></i></button>
+            <button onclick="onTextSubmit()"><i class="text-submit fa-solid fa-plus"></i></button>
+            <button onclick="onDeleteRow()"><i class="text-delete fa-regular fa-trash-can"></i></button>
+            <button onclick="onMoveLine(true)"> <i class="line-up fa-solid fa-arrow-up"></i></button>
+            <button onclick="onMoveLine(false)"> <i class="line-down fa-solid fa-arrow-down"></i></button>
+        </div>
+        <div class="editor-second-line flex">
+            <button onclick="setFontSize(true) "class="font-minus">A+</button>
+            <button onclick="setFontSize(false) "class ="font-plus">A-</button>
+            <button onclick="onSwitchAlign('right')"><i class="align-right fa-solid fa-align-right"></i></button>
+            <button onclick="onSwitchAlign('center')"><i class="align-center fa-solid fa-align-center"></i></button>
+            <button onclick="onSwitchAlign('left')"><i class="align-left fa-solid fa-align-left"></i></button>
             <label for="create-color">
                 <i class="fa fa-palette"></i>
                 <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
             </label>
         </section>
+    </div>
         </div>
     </section>
     <div class="main-content">
@@ -66,7 +71,7 @@
 
         <footer class="buttom-fotter flex align-center">
             <div class="logo">memegen</div>
-            <small>all rights reserved 2019</small>
+            <small>all rights reserved 2022</small>
         </footer>
 
     </div>

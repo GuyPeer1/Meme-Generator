@@ -8,30 +8,59 @@
 
 }
 
-.main-content {
-  position: absolute;
-}
-
 .grid-container {
-  grid-template-columns: repeat(3, .5fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-gap: 10px;
-  margin-left: 10em;
-  margin-right: 10em;
-}
-
-.gallery {
   background-color: var(--clr5);
+  grid-template-columns: repeat(3, .5fr);
+  ;
+  padding: 3em;
+  gap: 1.25em;
 }
 
 .editor {
   background-color: var(--clr5);
   justify-content: center;
-  position: absolute; 
+  position: absolute;
   left: -999em;
-z-index: 1;
+  z-index: 1;
 }
 
 .editor .canvas {
-padding: 2em;
+  padding: 2em;
+}
+
+.control-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.meme-text {
+  width: 23.3em;
+  height: 3.75em;
+  border-radius: 0.75em;
+  background-color: var(--clr2);
+  font-family: Montserrat;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--clr6);
+  margin-top: 1.5em;
+}
+
+.meme-text::placeholder {
+  color: var(--clr6);
+  font-weight: 400;
+  font-family: Montserrat;
+  font-size: 1.25em;
+  margin-left: 5%;
+}
+
+.control-box .editor-first-line {
+  justify-content: center;
+  margin-top: 3%;
+  gap: 0.625em;
+}
+
+.control-box .editor-second-line {
+  justify-content: center;
+  margin-top: 3%;
+  gap: 0.625em;
 }

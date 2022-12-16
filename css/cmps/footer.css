@@ -7,11 +7,16 @@ img.logo {
 }
 
 .main-footer {
-    text-align: center;
+    max-width: 56em;
     font-weight: 400;
     color: var(--clr6);
     font-family: Montserrat;
     font-size: 1.25em;
+    gap: 2em;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    
 }
 
 .main-footer .footer-name {
@@ -24,8 +29,16 @@ img.logo {
     color: var(--clr2);
     margin-right: .5em;
     border-radius: 12px;
-    width: 2.43em;
-    height: 2.43em;
+    width: 2.1em;
+    height: 2.1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+
+.fa-facebook, .fa-linkedin-in, .fa-github{
+font-size: 1.6em;
+text-align: center;
 }
 
 .buttom-fotter {
