@@ -3,8 +3,19 @@ button,
     width: 3.75em;
     height: 3.75em;
     border-radius: .75em;
-    background-color: var(--clr2)
+    background-color: var(--clr2);
+    font-weight: 400;
 }
 
-.fa-palette {
+.btn-download {
+    width: 7.5em;
+    height: 3.75em;
+    border-radius: .75em;
+    background-color: var(--clr1);
+    color: var(--clr2);
+    font-family: Montserrat;
+    font-size: 1.25em;
+    font-weight: 500;
+    text-decoration: none;
+    justify-content: center;
 }

@@ -46,6 +46,7 @@ text-align: center;
     background-color: var(--clr1);
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .buttom-fotter .logo {
@@ -60,5 +61,37 @@ text-align: center;
     font-family: "Montserrat - Thin";
     font-size: 1.1875em;
     font-weight: 400;
-
 }
+
+.banner-footer{
+    width: 8.31em;
+    height: 1.375em;
+    margin-bottom: 1.5em;
+}
+
+@media (max-width: 800px) {
+    .main-footer{
+flex-direction: column;
+    }
+        /* max-width: 56em;
+        font-weight: 400;
+        color: var(--clr6);
+        font-family: Montserrat;
+        font-size: 1.25em;
+        gap: 2em;
+        margin: auto;
+        margin-top: 4em;
+        margin-bottom: 4em; */
+        
+    .main-footer .footer-name {
+        color: var(--clr1);
+    }
+    .main-footer .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+  }

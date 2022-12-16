@@ -5,13 +5,11 @@
   height: 3.5em;
   font-size: 1.1875em;
   font-weight: 500;
-
 }
 
 .grid-container {
   background-color: var(--clr5);
   grid-template-columns: repeat(3, .5fr);
-  ;
   padding: 3em;
   gap: 1.25em;
 }
@@ -63,4 +61,35 @@
   justify-content: center;
   margin-top: 3%;
   gap: 0.625em;
+}
+
+.control-box .editor-third-line {
+  justify-content: center;
+  margin-top: 3%;
+  gap: 0.625em;
+}
+
+.control-box .editor-third-line .font-style {
+  font-family: Montserrat;
+  width: 7.5em;
+  height: 2.5em;
+  color: var(--clr6);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.control-box .editor-share-line {
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .grid-container {
+    background-color: var(--clr5);
+    grid-template-columns: repeat(2, .5fr);
+    padding: 1em;
+    gap: .75em;
+  }
+  .editor {
+    flex-direction: column;
+  }
 }

@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Meme Generator</title>
 </head>
-<header class="main-header">
-    <div class="header-container flex align-center space-between">
-        <div class="logo">memegen</div>
+<header class="main-header flex space-between">
+
+        <img class="banner" src="img/logo.png">
         <nav class="main-nav">
             <ul class="flex clean-list nav-list">
                 <li><a href="http://127.0.0.1:5500/index.html">Gallery</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
-    </div>
+        <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
 </header>
 
 <body onload="onInit()" class="main-layout">
-    <section class="editor flex  ">
+    <section class="editor flex">
         <section class="canvas">
             <div class="canvas-container">
                 <canvas width="400" height="400"></canvas>
@@ -31,25 +31,35 @@
                 oninput="onTextChange(this)">
             </input>
             <div class="editor-first-line flex ">
-            <button onclick="onSwitchLine()"><i class="switch-line fa-solid fa-up-down"></i></button>
-            <button onclick="onTextSubmit()"><i class="text-submit fa-solid fa-plus"></i></button>
-            <button onclick="onDeleteRow()"><i class="text-delete fa-regular fa-trash-can"></i></button>
-            <button onclick="onMoveLine(true)"> <i class="line-up fa-solid fa-arrow-up"></i></button>
-            <button onclick="onMoveLine(false)"> <i class="line-down fa-solid fa-arrow-down"></i></button>
-        </div>
-        <div class="editor-second-line flex">
-            <button onclick="setFontSize(true) "class="font-minus">A+</button>
-            <button onclick="setFontSize(false) "class ="font-plus">A-</button>
-            <button onclick="onSwitchAlign('right')"><i class="align-right fa-solid fa-align-right"></i></button>
-            <button onclick="onSwitchAlign('center')"><i class="align-center fa-solid fa-align-center"></i></button>
-            <button onclick="onSwitchAlign('left')"><i class="align-left fa-solid fa-align-left"></i></button>
-            <label for="create-color">
-                <i class="fa fa-palette"></i>
-                <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
-            </label>
+                <button onclick="onSwitchLine()"><i class="switch-line fa-solid fa-up-down"></i></button>
+                <button onclick="onTextSubmit()"><i class="text-submit fa-solid fa-plus"></i></button>
+                <button onclick="onDeleteRow()"><i class="text-delete fa-regular fa-trash-can"></i></button>
+                <button onclick="onMoveLine(true)"> <i class="line-up fa-solid fa-arrow-up"></i></button>
+                <button onclick="onMoveLine(false)"> <i class="line-down fa-solid fa-arrow-down"></i></button>
+            </div>
+            <div class="editor-second-line flex">
+                <button onclick="setFontSize(true) " class="font-minus">A+</button>
+                <button onclick="setFontSize(false) " class="font-plus">A-</button>
+                <button onclick="onSwitchAlign('right')"><i class="align-right fa-solid fa-align-right"></i></button>
+                <button onclick="onSwitchAlign('center')"><i class="align-center fa-solid fa-align-center"></i></button>
+                <button onclick="onSwitchAlign('left')"><i class="align-left fa-solid fa-align-left"></i></button>
+            </div>
+            <div class="editor-third-line flex">
+                <select onchange="setFontName(this.value)" class="font-style">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+                <label for="create-color">
+                    <i class="fa fa-palette"></i>
+                    <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
+                </label>
+            </div>
+            <div class="editor-share-line flex">
+                <a href="#" onclick="downloadMeme(this)" download="meme" class="btn-download flex align-center">Download</a>
+            </div>
         </section>
-    </div>
-        </div>
+
     </section>
     <div class="main-content">
         <section class="search-area flex align-center space-between">Search keyword
@@ -70,7 +80,7 @@
         </footer>
 
         <footer class="buttom-fotter flex align-center">
-            <div class="logo">memegen</div>
+            <img class="banner-footer" src="img/logo.png">
             <small>all rights reserved 2022</small>
         </footer>
 

@@ -14,11 +14,12 @@ function onImgSelect(img) {
     currMeme = {
         selectedImgId: img.id,
         selectedLineIdx: 0,
+        font: 'impact',
         lines: [
             {
                 txt: '',
                 size: 40,
-                align: 'left',
+                align: 'center',
                 color: 'white',
                 height: 50
             }

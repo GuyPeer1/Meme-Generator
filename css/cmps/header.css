@@ -1,6 +1,10 @@
 .main-header {
     background-color: var(--clr1);
-    /* height: 66px; */
+    height: 5em;
+}
+
+.main-header {
+    align-items: center;
 }
 
 .main-header .main-nav a {
@@ -10,7 +14,7 @@
     font-size: 1.357em;
     color:var(--clr2);
     min-width: 5em;
-    height: 5em;
+    /* height: 5em; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,9 +24,43 @@
     border-right: 1px solid var(--clr3);
 }
 
-.main-header .logo {
-    font-family: Montserrat;
-    font-weight: 800;
-    color:var(--clr2);
-    font-size: 1.8em;
+.banner{
+    margin-left: 150px;
+    width: 8.31em;
+    height: 1.375em;
+}
+
+@media (max-width: 800px) {
+    .menu-toggle-btn {
+        background-color: inherit;
+        border: none;
+        font-size: 1.3em;
+        color: white;
+        cursor: pointer;
+    }
+    .main-nav ul {
+        position: absolute;
+        transform: translateY(100%);
+        bottom: 6;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--clr1);
+        width: 100%;
+        justify-content: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s, box-shadow 0.6s;
+    }
+
+    body.menu-open .main-nav ul {
+        box-shadow: -6px 0px 14px rgb(0 0 0 / 20%);
+        max-height: 100vh;
+    }
+}
+
+@media (min-width: 800px) {
+    .menu-toggle-btn {
+        display: none;
+    }
 }

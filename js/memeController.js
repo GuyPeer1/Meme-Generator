@@ -24,7 +24,7 @@ function renderMeme(y) {
     }
 }
 
-function drawText(line) {
+function drawText(line, fontName) {
     const { txt: text, color: color, size: size, align: align, height: height } = line
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'
@@ -36,34 +36,27 @@ function drawText(line) {
     gCtx.strokeText(text, gElCanvas.width / 2, height)
 }
 
-
 function highLightText(y) {
     let startY
     let height = gElCanvas.height
-    // if (y < 70) {
-    //     startY = 10
-    //     y = 90
-    // }
-    // else {
-    //     startY = 260
-    //     y = 320
-    // }
+    console.log('height', height)
     switch (true) {
         case y < height / 4:
             startY = 10;
-            y = 90;
+            y = height / 5;
             break
         case y < height / 1.8:
             startY = 110;
             y = 120;
             break
-            default: 
-            startY = 260;
-            y = 320;
+
+        default:
+            startY = height - 100;
+            y = height - 20;
             break
     }
     gCtx.beginPath()
-    gCtx.fillStyle = 'white'
+    gCtx.fillStyle = 'rgba(255, 255, 255, 0.2)'
     gCtx.fillRect(0, startY, gElCanvas.width, y)
     gCtx.strokeStyle = 'black'
     gCtx.strokeRect(0, startY, gElCanvas.width, y)

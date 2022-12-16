@@ -24,9 +24,10 @@ var gImgs = [
 var gMeme = {
     selectedImgId: 2,
     selectedLineIdx: 0,
+    font: 'impact',
     lines: [
         {
-            txt: 'first line',
+            txt: '',
             size: 40,
             align: 'center',
             color: 'yellow',
@@ -56,7 +57,7 @@ function onTextChange(text) {
 
 function onTextSubmit() {
     let currMeme = gMeme
-    gTextPos = (gTextPos === 50) ? 300 : 150;
+    gTextPos = (gTextPos === 50) ? gElCanvas.height - 50 : gElCanvas.height / 2;
     currMeme.lines.push({
         txt: '',
         size: 40,
@@ -80,7 +81,7 @@ function setLineColor(userColor) {
 function setFontSize(lowerOrBigger) {
     var diffrance = lowerOrBigger ? 1 : -1
     let currMeme = gMeme
-    idx = gMeme.selectedLineIdx
+    let idx = gMeme.selectedLineIdx
     currMeme.lines[idx].size += diffrance
     gMeme = currMeme
     renderMeme()
@@ -89,10 +90,12 @@ function setFontSize(lowerOrBigger) {
 function onSwitchLine() {
     let idx = gMeme.selectedLineIdx
     idx++
-    if(!gMeme.lines[idx]) idx = 0
-    console.log('idx', idx)
+    if (!gMeme.lines[idx]) idx = 0
     gMeme.selectedLineIdx = idx
     gTextPos = (gTextPos === 50) ? 150 : 50;
+    renderMeme()
+    setTimeout(()=>{highLightText(gMeme.lines[idx].height)}, 50);
+
 }
 
 function onSwitchAlign(userAlign) {
@@ -121,4 +124,13 @@ function onMoveLine(upOrDown) {
     pos += movement
     currMeme.lines[idx].height = pos
     renderMeme()
+}
+
+function setFontName(name){
+    console.log('name', name)
+}
+
+function downloadMeme(elLink){
+    const data = gElCanvas.toDataURL() 
+    elLink.href = data 
 }
