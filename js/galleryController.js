@@ -3,7 +3,7 @@ function renderGallery() {
     var strHTML = ''
     gImgs.forEach(img => {
         let id = img.id
-        strHTML += `<img id="${id}" onclick="onImgSelect(this)" src="img/${id}.jpg"/>`
+        strHTML += `<img id="${id}" class="gal-img" onclick="onImgSelect(this)" src="img/${id}.jpg"/>`
     })
     gallery.innerHTML = strHTML
 }

@@ -26,3 +26,8 @@ background-color: var(--clr8);
     text-decoration: none;
     justify-content: center;
 }
+
+.btn-download:hover {
+    opacity: 0.8;
+    transition: opacity 0.4s;
+}

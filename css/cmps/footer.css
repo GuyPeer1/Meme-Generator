@@ -16,7 +16,7 @@ img.logo {
     margin: auto;
     margin-top: 4em;
     margin-bottom: 4em;
-    
+
 }
 
 .main-footer .footer-name {
@@ -30,18 +30,21 @@ img.logo {
     border-radius: .75em;
     width: 3em;
     height: 3em;
-    text-align: center;
     margin-top: 2em;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-img.linkdin, img.facebook, img.github{
-    display: block;
-    width: 80%;
-    height: 80%;
+.social-links .social {
+    width: 60%;
 }
 
+.social-links .social:hover {
+    cursor: pointer;
+    transform: rotate(45deg) scale(1.3);
+    transition: transform 0.2s;
+}
 
 .buttom-fotter {
     height: 13em;
@@ -65,33 +68,23 @@ img.linkdin, img.facebook, img.github{
     font-weight: 400;
 }
 
-.banner-footer{
+.banner-footer {
     width: 8.31em;
     height: 1.375em;
     margin-bottom: 1.5em;
 }
 
-.social-links .li{
-  
-}
 
 @media (max-width: 800px) {
-    .main-footer{
-flex-direction: column;
+    .main-footer {
+        flex-direction: column;
     }
-        /* max-width: 56em;
-        font-weight: 400;
-        color: var(--clr6);
-        font-family: Montserrat;
-        font-size: 1.25em;
-        gap: 2em;
-        margin: auto;
-        margin-top: 4em;
-        margin-bottom: 4em; */
-        
+
+
     .main-footer .footer-name {
         color: var(--clr1);
     }
+
     .main-footer .about {
         display: flex;
         flex-direction: column;
@@ -100,4 +93,4 @@ flex-direction: column;
         margin-left: 2em;
         margin-right: 2em;
     }
-  }
+}

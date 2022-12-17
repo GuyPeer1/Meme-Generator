@@ -13,7 +13,7 @@
     <img class="banner" src="img/logo.png">
     <nav class="main-nav">
         <ul class="flex clean-list nav-list">
-            <li><a href="https://guypeer1.github.io/Meme-Generator">Gallery</a></li>
+            <li><a href="https://guypeer1.github.io/Meme-Generator/">Gallery</a></li>
             <li><a href="#">About</a></li>
         </ul>
     </nav>
@@ -31,18 +31,20 @@
                 oninput="onTextChange(this)">
             </input>
             <div class="editor-first-line flex ">
-                <button onclick="onSwitchLine()"><img src=img/icons/switch.png class="switch-line" ></button>
-                <button onclick="onTextSubmit()"><img src=img/icons/add.png class="text-submit" ></i></button>
-                <button onclick="onDeleteRow()"><img src=img/icons/trash.png class="text-delete" ></i></button>
-                <button onclick="onMoveLine(true)"><img src=img/icons/up-arrow.png class="line-up" ></button>
-                <button onclick="onMoveLine(false)"><img src=img/icons/down-arrow.png class="line-down" ></i></button>
+                <button onclick="onSwitchLine()"><img src=img/icons/switch.png class="switch-line"></button>
+                <button onclick="onTextSubmit()"><img src=img/icons/add.png class="text-submit"></i></button>
+                <button onclick="onDeleteRow()"><img src=img/icons/trash.png class="text-delete"></i></button>
+                <button onclick="onMoveLine(true)"><img src=img/icons/up-arrow.png class="line-up"></button>
+                <button onclick="onMoveLine(false)"><img src=img/icons/down-arrow.png class="line-down"></i></button>
             </div>
             <div class="editor-second-line flex">
                 <button onclick="setFontSize(true) " class="font-plus"><img src=img/icons/increase.png></button>
                 <button onclick="setFontSize(false) " class="font-minus"><img src=img/icons/decrease.png></button>
-                <button onclick="onSwitchAlign('right')"><img src=img/icons/align-right.png class="align-right" ></button>
-                <button onclick="onSwitchAlign('center')"><img src=img/icons/align-center.png class="align-center" ></button>
-                <button onclick="onSwitchAlign('left')"><img src=img/icons/align-left.png class="align-left" ></button>
+                <button onclick="onSwitchAlign('right')"><img src=img/icons/align-right.png
+                        class="align-right"></button>
+                <button onclick="onSwitchAlign('center')"><img src=img/icons/align-center.png
+                        class="align-center"></button>
+                <button onclick="onSwitchAlign('left')"><img src=img/icons/align-left.png class="align-left"></button>
 
             </div>
             <div class="editor-third-line flex">
@@ -53,16 +55,20 @@
                 </select>
                 <label for="stroke-color">
                     <input type="color" id="stroke-color" style="display: none" oninput="setLineStroke(this)">
-                    <button onclick="document.getElementById('stroke-color').click()"><img src=img/icons/stroke.png ></button>
+                    <button onclick="document.getElementById('stroke-color').click()"><img
+                            src=img/icons/stroke.png></button>
                 </label>
                 <label for="create-color">
                     <input type="color" id="create-color" style="display: none" oninput="setLineColor(this)">
-                    <button onclick="document.getElementById('create-color').click()"><img src=img/icons/paint.png ></button>
+                    <button onclick="document.getElementById('create-color').click()"><img
+                            src=img/icons/paint.png></button>
                 </label>
             </div>
             <div class="editor-share-line flex">
                 <a href="#" onclick="downloadMeme(this)" download="meme"
                     class="btn-download flex align-center">Download</a>
+                <a href="#" onclick="downloadMeme(this)" download="meme"
+                    class="btn-download flex align-center">Share</a>
             </div>
         </section>
 
@@ -74,13 +80,13 @@
         <section class="gallery grid grid-container"> </section>
         <footer class='main-footer flex align-center'>
             <img src=img/me.jpg class="logo">
-            <div class="about"><span class="footer-name"> Guy Peer </span> <br />
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptas impedit officia aliquam enim sed
-                similique tempore
+            <div class="about"><span class="footer-name"> Guy Peer </span> <br /> <br />
+                30 Years old Full Stack Developer, located at Rosh Haayin. <br />
+                Feel free to reach me via any of the links below.
                 <ul class="social-links clean-list flex align-items ">
-                    <li><img src=img/icons/linkedin.png class="linkdin"></li>
-                    <li><img src=img/icons/facebook.png class="facebook"></li>
-                    <li><img src=img/icons/github.png class="github"> </li>
+                    <li><img src=img/icons/linkedin.png class="social"></li>
+                    <li><img src=img/icons/facebook.png class="social"></li>
+                    <li><img src=img/icons/github.png class="social"> </li>
                 </ul>
             </div>
         </footer>
@@ -95,7 +101,7 @@
     <script src="js/memeController.js"></script>
     <script src="js/memeService.js"></script>
     <script src="js/galleryController.js"></script>
-    <script src="https://kit.fontawesome.com/bf7fb668e9.js" crossorigin="anonymous"></script>
+
 
 </body>
 

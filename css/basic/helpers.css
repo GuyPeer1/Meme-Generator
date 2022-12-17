@@ -25,3 +25,15 @@
 img {
     width: 100%;
 }
+
+@media (min-width: 800px) {
+    .gal-img{
+width: 21.875em;
+    }
+}
+
+@media (max-width: 800px) {
+    .gal-img{
+width: 10.875em;
+    }
+}

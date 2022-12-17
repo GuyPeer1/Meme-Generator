@@ -11,7 +11,7 @@
   background-color: var(--clr5);
   grid-template-columns: repeat(3, .5fr);
   padding: 3em;
-  gap: 1.25em;
+  gap: .75em;
 }
 
 .editor {
@@ -80,9 +80,16 @@
 }
 
 .control-box .editor-share-line {
-  justify-content: center;
+  justify-content: space-between;
+  margin-top: 1em;
+  
 }
 
+.gal-img:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 0.2s;
+ }
 
 @media (max-width: 800px) {
   .grid-container {
@@ -100,5 +107,5 @@
   .control-box {
     align-items: center;
   }
-  
 }
+
