@@ -1,7 +1,6 @@
 let gElCanvas
 let gCtx
 let gTextPos = 50
-// let gCurrLinePicked = 0
 
 function onInit() {
     gElCanvas = document.querySelector('canvas')
@@ -9,6 +8,7 @@ function onInit() {
     renderMeme()
     renderGallery()
     addMouseListeners()
+    enterListener()
 }
 
 function renderMeme(y) {
@@ -24,10 +24,10 @@ function renderMeme(y) {
     }
 }
 
-function drawText(line, fontName) {
-    const { txt: text, color: color, size: size, align: align, height: height } = line
+function drawText(line) {
+    const { txt: text, color: color, size: size, align: align, height: height, stroke: stroke } = line
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'black'
+    gCtx.strokeStyle = stroke
     gCtx.fillStyle = color || white
     gCtx.font = size + 'px impact'
     gCtx.textAlign = align
@@ -39,7 +39,6 @@ function drawText(line, fontName) {
 function highLightText(y) {
     let startY
     let height = gElCanvas.height
-    console.log('height', height)
     switch (true) {
         case y < height / 4:
             startY = 10;
@@ -64,4 +63,14 @@ function highLightText(y) {
 
 function restorePlaceHolder() {
     document.getElementsByName('meme-text')[0].placeholder = 'meme text comes here';
+    document.getElementsByName('meme-text')[0].value = '';
+}
+
+function enterListener() {
+    document.querySelector(".meme-text").addEventListener("keydown", function (event) {
+    // Check if the key pressed is the Enter key
+    if (event.keyCode === 13) {
+        onTextSubmit()
+    }
+});
 }

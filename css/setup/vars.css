@@ -10,9 +10,13 @@
     /* Serach bar font color */
     --clr4: #7a7a7a;
     /* main layout & gallery background color */
-    --clr5:  #e3e3e3;
+    --clr5: #e3e3e3;
     /*footer text color */
-    --clr6:  #000000;
+    --clr6: #000000;
+    /*gallery&about text color (hover) */
+    --clr7: #040a2c;
+    /*btns bgcolor (hover) */
+    --clr8: #f5f5f5;
 
     /* bp */
     --s: 600px;

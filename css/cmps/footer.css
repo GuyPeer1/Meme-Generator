@@ -26,20 +26,22 @@ img.logo {
 
 .main-footer li {
     background-color: var(--clr1);
-    color: var(--clr2);
     margin-right: .5em;
-    border-radius: 12px;
-    width: 2.1em;
-    height: 2.1em;
+    border-radius: .75em;
+    width: 3em;
+    height: 3em;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
 }
 
-
-.fa-facebook, .fa-linkedin-in, .fa-github{
-font-size: 1.6em;
-text-align: center;
+img.linkdin, img.facebook, img.github{
+    display: block;
+    width: 80%;
+    height: 80%;
 }
+
 
 .buttom-fotter {
     height: 13em;
@@ -67,6 +69,10 @@ text-align: center;
     width: 8.31em;
     height: 1.375em;
     margin-bottom: 1.5em;
+}
+
+.social-links .li{
+  
 }
 
 @media (max-width: 800px) {

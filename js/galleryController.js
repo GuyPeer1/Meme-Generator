@@ -21,6 +21,7 @@ function onImgSelect(img) {
                 size: 40,
                 align: 'center',
                 color: 'white',
+                stroke: 'black',
                 height: 50
             }
         ]

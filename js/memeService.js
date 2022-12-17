@@ -31,6 +31,7 @@ var gMeme = {
             size: 40,
             align: 'center',
             color: 'yellow',
+            stroke: 'black',
             height: 50
         }
     ]
@@ -57,12 +58,17 @@ function onTextChange(text) {
 
 function onTextSubmit() {
     let currMeme = gMeme
+    if (currMeme.lines[currMeme.lines.length - 1].txt === '') {
+        alert('you cant submit empty line')
+        return
+    }
     gTextPos = (gTextPos === 50) ? gElCanvas.height - 50 : gElCanvas.height / 2;
     currMeme.lines.push({
         txt: '',
         size: 40,
         align: 'center',
         color: 'white',
+        stroke: 'black',
         height: gTextPos
     })
     gMeme = currMeme
@@ -72,9 +78,17 @@ function onTextSubmit() {
 
 function setLineColor(userColor) {
     let currMeme = gMeme
-    // currMeme.lines[gCurrLinePicked].color = userColor.value
     idx = gMeme.selectedLineIdx
     currMeme.lines[idx].color = userColor.value
+    gMeme = currMeme
+    renderMeme()
+}
+
+function setLineStroke(userStroke) {
+    let currMeme = gMeme
+    idx = gMeme.selectedLineIdx
+    currMeme.lines[idx].stroke = userStroke.value
+    gMeme = currMeme
     renderMeme()
 }
 
@@ -94,7 +108,7 @@ function onSwitchLine() {
     gMeme.selectedLineIdx = idx
     gTextPos = (gTextPos === 50) ? 150 : 50;
     renderMeme()
-    setTimeout(()=>{highLightText(gMeme.lines[idx].height)}, 50);
+    setTimeout(() => { highLightText(gMeme.lines[idx].height) }, 50);
 
 }
 
@@ -110,10 +124,9 @@ function onSwitchAlign(userAlign) {
 function onDeleteRow() {
     currMeme = gMeme
     let idx = gMeme.selectedLineIdx
-    // currMeme.lines[gCurrLinePicked].txt = ''
     currMeme.lines[idx].txt = ''
     renderMeme()
-    onSwitchLine()
+    // onSwitchLine()
 }
 
 function onMoveLine(upOrDown) {
@@ -126,11 +139,11 @@ function onMoveLine(upOrDown) {
     renderMeme()
 }
 
-function setFontName(name){
+function setFontName(name) {
     console.log('name', name)
 }
 
-function downloadMeme(elLink){
-    const data = gElCanvas.toDataURL() 
-    elLink.href = data 
+function downloadMeme(elLink) {
+    const data = gElCanvas.toDataURL()
+    elLink.href = data
 }
