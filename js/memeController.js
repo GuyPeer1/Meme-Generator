@@ -9,6 +9,7 @@ function onInit() {
     renderGallery()
     addMouseListeners()
     enterListener()
+    scrollToAboutListener()
 }
 
 function renderMeme(y) {

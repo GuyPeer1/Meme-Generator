@@ -1,6 +1,7 @@
 /* Setup */
 @import './setup/vars.css';
 @import './setup/font-face.css';
+@import './setup/layout.css';
 
 /* Basic */
 @import './basic/basic.css';
@@ -11,3 +12,4 @@
 @import './cmps/header.css';
 @import './cmps/footer.css';
 @import './cmps/main-content.css';
+
